@@ -5,7 +5,7 @@ class Messenger < Sinatra::Base
   enable :sessions
 
   get '/' do
-    @message = session[:message]
+    @message ||= session[:message]
     erb(:index)
   end
 
