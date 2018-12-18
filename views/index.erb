@@ -10,6 +10,15 @@
   <input type="submit" value="send">
 </form>
 
-<%=@message%>
+<%@message.reverse.each do |message| %>
+<%= message.time%><br>
+<h10>
+  ________________
+</h10><br>
+<%= message.content %><br>
+<h10>
+  ________________
+</h10><br>
+<%end%>
 
 </center>

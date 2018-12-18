@@ -38,7 +38,7 @@ end
 # so i can see past messages
 # i want my page to display the history of messages
 
-feature 'text box' do
+feature 'message history' do
   scenario 'post message and have it appear' do
     visit('/')
     fill_in('message', with: 'this is my message i am posting')
@@ -50,4 +50,9 @@ feature 'text box' do
     expect(page).to have_content 'this is my message i am posting'
     expect(page).to have_content 'this is another message i am posting'
   end
+
+  feature 'message history' do
+
+  end
+
 end
