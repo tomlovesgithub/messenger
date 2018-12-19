@@ -16,5 +16,9 @@ class Messenger < Sinatra::Base
     redirect '/'
   end
 
+  get '/full_message' do
+    @message_history = session[:message]
+  end
+
   run! if app_file == $0
 end

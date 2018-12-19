@@ -13,13 +13,12 @@ describe Message do
 
   it 'has time' do
     first_message = message.new("content")
-    expect(first_message).to have_attributes(:time => time_double)
+    expect(first_message).to have_attributes(:display_time => time_double)
   end
 
   it 'only displays first 20 characters' do
     first_message = message.new("12345678910111213141516")
-    expect(first_message.content.length).to eq(20)
+    expect(first_message.preview.length).to eq(20)
   end
-
 
 end

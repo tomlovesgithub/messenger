@@ -44,7 +44,6 @@ feature 'message history' do
     fill_in('message', with: 'My Message')
     click_button('send')
     expect(page).to have_content 'My Message'
-    visit('/')
     fill_in('message', with: 'another message')
     click_button('send')
     expect(page).to have_content 'My Message'
@@ -67,4 +66,21 @@ feature 'message preview' do
     click_button('send')
     expect(page).to_not have_content ' am posting'
   end
+
+# as a user
+# so that I can read the full message
+# I want to be able to click on a preview and read only the full message I clicked.
+
+  # feature 'seeing full message at new address' do
+  #   scenario 'click on message preview to read full message' do
+  #     visit('/')
+  #     fill_in('message', with: 'this is my message i am posting')
+  #     click_button('send')
+  #     fill_in('message', with: 'Here is a new message, which is over 20 characters')
+  #     click_button('send')
+  #     click_link('id')
+  #     expect(page).to have_content 'Here is a new message, which is over 20 characters'
+  #     expect(page).to_not have_content 'this is my message i am posting'
+  #   end
+  # end
 end
