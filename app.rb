@@ -1,23 +1,28 @@
+ENV["RACK_ENV"] ||= 'development'
+
+require './config/datamapper'
+require 'rubygems'
 require 'sinatra/base'
-require './lib/message.rb'
+require './lib/message'
+require 'pry'
+
 class Messenger < Sinatra::Base
 
-  enable :sessions
+  set :sessions, true
 
   get '/' do
-    session[:message] ||= []
-    @message = session[:message]
+    @messages = Message.all
     erb(:index)
   end
 
   post '/new_message' do
-    message = Message.new(params[:message])
-    session[:message] << message
+    Message.create(content: params[:message])
     redirect '/'
   end
 
-  get '/full_message' do
-    @message_history = session[:message]
+  get '/messages/:id' do
+    @message = Message.get(params[:id])
+    erb(:full_message)
   end
 
   run! if app_file == $0

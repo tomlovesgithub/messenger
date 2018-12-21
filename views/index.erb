@@ -10,12 +10,12 @@
   <input type="submit" value="send">
 </form>
 
-<%@message.reverse.each do |message| %>
+<%@messages.reverse.each do |message| %>
 <%= message.display_time%><br>
 <h10>
   ________________
 </h10><br>
-<%= message.preview %><br>
+<a href=<%="/messages/#{message.id}"%>><%= message.preview %></a><br>
 <h10>
   ________________
 </h10><br>
