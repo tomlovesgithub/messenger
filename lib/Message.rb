@@ -13,7 +13,7 @@ class Message
   end
 
   def display_time
-    @created_at.strftime("%d/%m/%Y %H:%M:%S:%L.%P")
+    created_at.strftime("%d/%m/%Y - %H:%M:%S.%P")
   end
 
 end

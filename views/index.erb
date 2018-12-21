@@ -1,24 +1,21 @@
+<body style="background-image: linear-gradient(to right, powderblue, powderblue, white)">
 <center>
   <h1>
     🤙
   </h1>
   <form action='/new_message' method='post'>
     <textarea
-    rows="10" cols="100" type="text" name="message">
+    rows="10" cols="100" type="text" name="message" style="background-color:#c6ffed;">
   </textarea>
   <br>
   <input type="submit" value="send">
 </form>
-
 <%@messages.reverse.each do |message| %>
 <%= message.display_time%><br>
-<h10>
-  ________________
-</h10><br>
-<a href=<%="/messages/#{message.id}"%>><%= message.preview %></a><br>
-<h10>
-  ________________
-</h10><br>
-<%end%>
-
+<h10>________________</h10><br>
+<a href=<%="/messages/#{message.id}"%>>
+  <%= message.preview %></a><br>
+  <h10>________________</h10><br>
+  <%end%>
 </center>
+</body>

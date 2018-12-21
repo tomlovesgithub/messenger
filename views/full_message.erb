@@ -1,12 +1,17 @@
 <!DOCTYPE html>
-<hmtl lang"en" dir=ltr">
-  <head>
-    <meta charset="utf-8">
-    <title></title>
+<center>
+  <hmtl lang"en" dir=ltr">
+    <head>
+      <meta charset="utf-8">
+      <title></title>
     </head>
-<body>
-  <h1>🤙</h1>
-  <div>
-    <%= @message.created_at %>: <span><%= @message.content %></span>
-  </div>
-</body>
+    <body style="background-image: linear-gradient(to right, powderblue, powderblue, white)">
+      <h1>🤙</h1>
+      <div>
+        <%= @message.display_time%><br>
+        <h10>________________</h10><br>
+          <%= @message.content %></a><br>
+          <h10>________________</h10><br>
+        </div>
+      </body>
+    </center>
