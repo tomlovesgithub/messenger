@@ -25,5 +25,5 @@ class Messenger < Sinatra::Base
     erb(:full_message)
   end
 
-  run! if app_file == $0
+  run! if app_file == $PROGRAM_NAME
 end

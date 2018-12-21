@@ -16,5 +16,4 @@ class Message
     @created_at.strftime("%d/%m/%Y %H:%M:%S:%L.%P")
   end
 
-
 end
