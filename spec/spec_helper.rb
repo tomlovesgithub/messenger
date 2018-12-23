@@ -7,6 +7,7 @@ require 'capybara'
 require 'capybara/rspec'
 require 'rspec'
 require 'timecop'
+require 'simplecov'
 
 # tell Capybara about our app class
 Capybara.app = Messenger

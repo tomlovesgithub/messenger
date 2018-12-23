@@ -1,0 +1,11 @@
+body {
+  background: linear-gradient(to right,white, powderblue, powderblue)
+}
+
+textarea {
+ background: linear-gradient(to right, powderblue, powderblue, white)
+}
+
+div {
+ background: linear-gradient(to right, powderblue, powderblue, white)
+}

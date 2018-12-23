@@ -1,17 +1,16 @@
 <!DOCTYPE html>
 <center>
   <hmtl lang"en" dir=ltr">
-    <head>
-      <meta charset="utf-8">
-      <title></title>
-    </head>
-    <body style="background-image: linear-gradient(to right, powderblue, powderblue, white)">
+    <head><link rel="stylesheet" type="text/css" href="<%= url("/style.css")%>"></head>
+    <meta charset="utf-8">
+    <title></title>
+    <body>
       <h1>🤙</h1>
       <div>
         <%= @message.display_time%><br>
         <h10>________________</h10><br>
-          <%= @message.content %></a><br>
-          <h10>________________</h10><br>
-        </div>
-      </body>
-    </center>
+        <%= @message.content %></a><br>
+        <h10>________________</h10><br>
+      </div>
+    </body>
+  </center>

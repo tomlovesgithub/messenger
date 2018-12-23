@@ -9,7 +9,7 @@ require 'pry'
 class Messenger < Sinatra::Base
 
   set :sessions, true
-
+  
   get '/' do
     @messages = Message.all
     erb(:index)
