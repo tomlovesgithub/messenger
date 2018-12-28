@@ -17,7 +17,6 @@ class Message
     created_at.strftime("%d/%m/%Y - %H:%M:%S.%P")
   end
 
-
   def self.delete(id:)
     if ENV['RACK_ENV'] == 'test'
       connection = PG.connect(dbname: 'message_app_test')

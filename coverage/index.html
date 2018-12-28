@@ -14,26 +14,26 @@
       <img src="./assets/0.10.2/loading.gif" alt="loading"/>
     </div>
     <div id="wrapper" style="display:none;">
-      <div class="timestamp">Generated <abbr class="timeago" title="2018-12-28T00:50:21+00:00">2018-12-28T00:50:21+00:00</abbr></div>
+      <div class="timestamp">Generated <abbr class="timeago" title="2018-12-28T12:06:26+00:00">2018-12-28T12:06:26+00:00</abbr></div>
       <ul class="group_tabs"></ul>
 
       <div id="content">
         <div class="file_list_container" id="AllFiles">
   <h2>
     <span class="group_name">All Files</span>
-    (<span class="covered_percent"><span class="green">98.28%</span></span>
+    (<span class="covered_percent"><span class="green">98.52%</span></span>
      covered at
      <span class="covered_strength">
        <span class="green">
-         2.35
+         2.28
        </span>
     </span> hits/line)
   </h2>
   <a name="AllFiles"></a>
   <div>
     <b>6</b> files in total.
-    <b>116</b> relevant lines. 
-    <span class="green"><b>114</b> lines covered</span> and
+    <b>135</b> relevant lines. 
+    <span class="green"><b>133</b> lines covered</span> and
     <span class="red"><b>2</b> lines missed </span>
   </div>
   <table class="file_list">
@@ -53,11 +53,11 @@
       <tr>
         <td class="strong"><a href="#1a674ae0340113d3057c7f1e823f6838623a49c3" class="src_link" title="app.rb">app.rb</a></td>
         <td class="green strong">100.0 %</td>
-        <td>35</td>
-        <td>22</td>
-        <td>22</td>
+        <td>46</td>
+        <td>29</td>
+        <td>29</td>
         <td>0</td>
-        <td>3.7</td>
+        <td>3.3</td>
       </tr>
       
       <tr>
@@ -73,19 +73,19 @@
       <tr>
         <td class="strong"><a href="#15c2d02e71d733f680c5c37955a6b92134cc9830" class="src_link" title="lib/message.rb">lib/message.rb</a></td>
         <td class="yellow strong">88.24 %</td>
-        <td>30</td>
+        <td>29</td>
         <td>17</td>
         <td>15</td>
         <td>2</td>
-        <td>4.1</td>
+        <td>4.3</td>
       </tr>
       
       <tr>
         <td class="strong"><a href="#6c956c6167c0bc3008a82b24fadb3f50ba260aa5" class="src_link" title="spec/features/message_feature_spec.rb">spec/features/message_feature_spec.rb</a></td>
         <td class="green strong">100.0 %</td>
-        <td>83</td>
-        <td>37</td>
-        <td>37</td>
+        <td>106</td>
+        <td>49</td>
+        <td>49</td>
         <td>0</td>
         <td>1.0</td>
       </tr>
@@ -97,7 +97,7 @@
         <td>17</td>
         <td>17</td>
         <td>0</td>
-        <td>3.3</td>
+        <td>3.6</td>
       </tr>
       
       <tr>
@@ -131,8 +131,8 @@
     <h3>app.rb</h3>
     <h4><span class="green">100.0 %</span> covered</h4>
     <div>
-      <b>22</b> relevant lines. 
-      <span class="green"><b>22</b> lines covered</span> and
+      <b>29</b> relevant lines. 
+      <span class="green"><b>29</b> lines covered</span> and
       <span class="red"><b>0</b> lines missed.</span>
     </div>
   </div>
@@ -218,14 +218,14 @@
           <code class="ruby">  get &#39;/&#39; do</code>
         </li>
       
-        <li class="covered" data-hits="21" data-linenumber="14">
-          <span class="hits">21</span>
+        <li class="covered" data-hits="24" data-linenumber="14">
+          <span class="hits">24</span>
           
           <code class="ruby">    @messages = Message.all</code>
         </li>
       
-        <li class="covered" data-hits="21" data-linenumber="15">
-          <span class="hits">21</span>
+        <li class="covered" data-hits="24" data-linenumber="15">
+          <span class="hits">24</span>
           
           <code class="ruby">    erb(:index)</code>
         </li>
@@ -248,14 +248,14 @@
           <code class="ruby">  post &#39;/new_message&#39; do</code>
         </li>
       
-        <li class="covered" data-hits="11" data-linenumber="19">
-          <span class="hits">11</span>
+        <li class="covered" data-hits="12" data-linenumber="19">
+          <span class="hits">12</span>
           
           <code class="ruby">    Message.create(content: params[:message])</code>
         </li>
       
-        <li class="covered" data-hits="11" data-linenumber="20">
-          <span class="hits">11</span>
+        <li class="covered" data-hits="12" data-linenumber="20">
+          <span class="hits">12</span>
           
           <code class="ruby">    redirect &#39;/&#39;</code>
         </li>
@@ -341,10 +341,76 @@
         <li class="covered" data-hits="1" data-linenumber="34">
           <span class="hits">1</span>
           
+          <code class="ruby">  get &#39;/:id/update&#39; do</code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="35">
+          <span class="hits">1</span>
+          
+          <code class="ruby">    @message_id = params[:id]</code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="36">
+          <span class="hits">1</span>
+          
+          <code class="ruby">    erb(:edit)</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="37">
+          
+          
+          <code class="ruby">  end</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="38">
+          
+          
+          <code class="ruby"></code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="39">
+          <span class="hits">1</span>
+          
+          <code class="ruby">  patch &#39;/:id&#39; do</code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="40">
+          <span class="hits">1</span>
+          
+          <code class="ruby">    connection = PG.connect(dbname: &quot;message_app_#{ENV[&quot;RACK_ENV&quot;]}&quot;)</code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="41">
+          <span class="hits">1</span>
+          
+          <code class="ruby">    connection.exec(&quot;UPDATE messages SET content = &#39;#{params[:message]}&#39; WHERE id = &#39;#{params[:id]}&#39;&quot;)</code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="42">
+          <span class="hits">1</span>
+          
+          <code class="ruby">    redirect(&#39;/&#39;)</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="43">
+          
+          
+          <code class="ruby">  end</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="44">
+          
+          
+          <code class="ruby"></code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="45">
+          <span class="hits">1</span>
+          
           <code class="ruby">  run! if app_file == $PROGRAM_NAME</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="35">
+        <li class="never" data-hits="" data-linenumber="46">
           
           
           <code class="ruby">end</code>
@@ -502,8 +568,8 @@
           <code class="ruby">  def preview</code>
         </li>
       
-        <li class="covered" data-hits="28" data-linenumber="13">
-          <span class="hits">28</span>
+        <li class="covered" data-hits="30" data-linenumber="13">
+          <span class="hits">30</span>
           
           <code class="ruby">    content[0..19]</code>
         </li>
@@ -526,8 +592,8 @@
           <code class="ruby">  def display_time</code>
         </li>
       
-        <li class="covered" data-hits="28" data-linenumber="17">
-          <span class="hits">28</span>
+        <li class="covered" data-hits="30" data-linenumber="17">
+          <span class="hits">30</span>
           
           <code class="ruby">    created_at.strftime(&quot;%d/%m/%Y - %H:%M:%S.%P&quot;)</code>
         </li>
@@ -544,67 +610,61 @@
           <code class="ruby"></code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="20">
-          
-          
-          <code class="ruby"></code>
-        </li>
-      
-        <li class="covered" data-hits="1" data-linenumber="21">
+        <li class="covered" data-hits="1" data-linenumber="20">
           <span class="hits">1</span>
           
           <code class="ruby">  def self.delete(id:)</code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="22">
+        <li class="covered" data-hits="1" data-linenumber="21">
           <span class="hits">1</span>
           
           <code class="ruby">    if ENV[&#39;RACK_ENV&#39;] == &#39;test&#39;</code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="23">
+        <li class="covered" data-hits="1" data-linenumber="22">
           <span class="hits">1</span>
           
           <code class="ruby">      connection = PG.connect(dbname: &#39;message_app_test&#39;)</code>
         </li>
       
-        <li class="missed" data-hits="0" data-linenumber="24">
+        <li class="missed" data-hits="0" data-linenumber="23">
           
           
           <code class="ruby">    elsif ENV[&#39;RACK_ENV&#39;] == &#39;development&#39;</code>
         </li>
       
-        <li class="missed" data-hits="0" data-linenumber="25">
+        <li class="missed" data-hits="0" data-linenumber="24">
           
           
           <code class="ruby">      connection = PG.connect(dbname: &#39;message_app_development&#39;)</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="26">
+        <li class="never" data-hits="" data-linenumber="25">
           
           
           <code class="ruby">    end</code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="27">
+        <li class="covered" data-hits="1" data-linenumber="26">
           <span class="hits">1</span>
           
           <code class="ruby">    connection.exec(&quot;DELETE FROM messages WHERE id = #{id}&quot;)</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="28">
+        <li class="never" data-hits="" data-linenumber="27">
           
           
           <code class="ruby">  end</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="29">
+        <li class="never" data-hits="" data-linenumber="28">
           
           
           <code class="ruby"></code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="30">
+        <li class="never" data-hits="" data-linenumber="29">
           
           
           <code class="ruby">end</code>
@@ -620,8 +680,8 @@
     <h3>spec/features/message_feature_spec.rb</h3>
     <h4><span class="green">100.0 %</span> covered</h4>
     <div>
-      <b>37</b> relevant lines. 
-      <span class="green"><b>37</b> lines covered</span> and
+      <b>49</b> relevant lines. 
+      <span class="green"><b>49</b> lines covered</span> and
       <span class="red"><b>0</b> lines missed.</span>
     </div>
   </div>
@@ -1046,25 +1106,25 @@
         <li class="never" data-hits="" data-linenumber="70">
           
           
-          <code class="ruby"># As a user</code>
+          <code class="ruby"></code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="71">
           
           
-          <code class="ruby"># So I can remove an entry from messenger</code>
+          <code class="ruby"># As a user</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="72">
           
           
-          <code class="ruby"># I want to delete a message</code>
+          <code class="ruby"># So I can remove an entry from messenger</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="73">
           
           
-          <code class="ruby"></code>
+          <code class="ruby"># I want to delete a message</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="74">
@@ -1082,7 +1142,7 @@
         <li class="covered" data-hits="1" data-linenumber="76">
           <span class="hits">1</span>
           
-          <code class="ruby">  scenario &#39;a user can delete an entry&#39; do</code>
+          <code class="ruby">  scenario &#39;a user can delete an message&#39; do</code>
         </li>
       
         <li class="covered" data-hits="1" data-linenumber="77">
@@ -1122,6 +1182,144 @@
         </li>
       
         <li class="never" data-hits="" data-linenumber="83">
+          
+          
+          <code class="ruby">end</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="84">
+          
+          
+          <code class="ruby"></code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="85">
+          
+          
+          <code class="ruby"># As a user</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="86">
+          
+          
+          <code class="ruby"># So I can change a message thats been posted</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="87">
+          
+          
+          <code class="ruby"># I want to update a message</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="88">
+          
+          
+          <code class="ruby"></code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="89">
+          <span class="hits">1</span>
+          
+          <code class="ruby">feature &#39;Updating a message&#39; do</code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="90">
+          <span class="hits">1</span>
+          
+          <code class="ruby">  scenario &#39;A user can update a message&#39; do</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="91">
+          
+          
+          <code class="ruby"></code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="92">
+          <span class="hits">1</span>
+          
+          <code class="ruby">    go_homepage_fill_in_and_send(&#39;ahm sure ill want to update this one day&#39;)</code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="93">
+          <span class="hits">1</span>
+          
+          <code class="ruby">    expect(page).to have_content(&#39;ahm sure ill want to&#39;)</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="94">
+          
+          
+          <code class="ruby"></code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="95">
+          <span class="hits">1</span>
+          
+          <code class="ruby">    first(&quot;.indv_msg&quot;).click_button &#39;Update&#39;</code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="96">
+          <span class="hits">1</span>
+          
+          <code class="ruby">    expect(current_path).to eq &quot;/#{Message[0].id}/update&quot;</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="97">
+          
+          
+          <code class="ruby"></code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="98">
+          <span class="hits">1</span>
+          
+          <code class="ruby">    fill_in(&#39;message&#39;, with: &#39;im sure ill want to update this one day&#39;)</code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="99">
+          <span class="hits">1</span>
+          
+          <code class="ruby">    click_button(&#39;Submit&#39;)</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="100">
+          
+          
+          <code class="ruby"></code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="101">
+          <span class="hits">1</span>
+          
+          <code class="ruby">    expect(current_path).to eq &#39;/&#39;</code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="102">
+          <span class="hits">1</span>
+          
+          <code class="ruby">    expect(page).not_to have_content(&#39;ahm sure ill want to&#39;)</code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="103">
+          <span class="hits">1</span>
+          
+          <code class="ruby">    expect(page).to have_content(&#39;im sure ill want to &#39;)</code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="104">
+          <span class="hits">1</span>
+          
+          <code class="ruby">    wipe_db</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="105">
+          
+          
+          <code class="ruby">  end</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="106">
           
           
           <code class="ruby">end</code>
@@ -1176,8 +1374,8 @@
           <code class="ruby">def go_homepage</code>
         </li>
       
-        <li class="covered" data-hits="9" data-linenumber="6">
-          <span class="hits">9</span>
+        <li class="covered" data-hits="10" data-linenumber="6">
+          <span class="hits">10</span>
           
           <code class="ruby">  visit(&#39;/&#39;)</code>
         </li>
@@ -1200,20 +1398,20 @@
           <code class="ruby">def go_homepage_fill_in_and_send(message = &quot;Short Message&quot;)</code>
         </li>
       
-        <li class="covered" data-hits="8" data-linenumber="10">
-          <span class="hits">8</span>
+        <li class="covered" data-hits="9" data-linenumber="10">
+          <span class="hits">9</span>
           
           <code class="ruby">  go_homepage</code>
         </li>
       
-        <li class="covered" data-hits="8" data-linenumber="11">
-          <span class="hits">8</span>
+        <li class="covered" data-hits="9" data-linenumber="11">
+          <span class="hits">9</span>
           
           <code class="ruby">  fill_in(&#39;message&#39;, with: message)</code>
         </li>
       
-        <li class="covered" data-hits="8" data-linenumber="12">
-          <span class="hits">8</span>
+        <li class="covered" data-hits="9" data-linenumber="12">
+          <span class="hits">9</span>
           
           <code class="ruby">  click_button(&#39;send&#39;)</code>
         </li>
@@ -1302,8 +1500,8 @@
           <code class="ruby">def wipe_db</code>
         </li>
       
-        <li class="covered" data-hits="8" data-linenumber="27">
-          <span class="hits">8</span>
+        <li class="covered" data-hits="9" data-linenumber="27">
+          <span class="hits">9</span>
           
           <code class="ruby">  DatabaseCleaner.clean</code>
         </li>

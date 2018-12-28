@@ -31,5 +31,16 @@ class Messenger < Sinatra::Base
     redirect '/'
   end
 
+  get '/:id/update' do
+    @message_id = params[:id]
+    erb(:edit)
+  end
+
+  patch '/:id' do
+    connection = PG.connect(dbname: "message_app_#{ENV["RACK_ENV"]}")
+    connection.exec("UPDATE messages SET content = '#{params[:message]}' WHERE id = '#{params[:id]}'")
+    redirect('/')
+  end
+
   run! if app_file == $PROGRAM_NAME
 end

@@ -67,17 +67,40 @@ feature 'seeing full message at new address' do
     wipe_db
   end
 end
+
 # As a user
 # So I can remove an entry from messenger
 # I want to delete a message
 
-
 feature 'Deleting an entry' do
-  scenario 'a user can delete an entry' do
+  scenario 'a user can delete an message' do
     go_homepage_fill_in_and_send('im sure ill want to delete this one day')
     first(".indv_msg").click_button 'Delete'
     expect(current_path).to eq "/"
     expect(page).not_to have_content('im sure ill want to ')
+    wipe_db
+  end
+end
+
+# As a user
+# So I can change a message thats been posted
+# I want to update a message
+
+feature 'Updating a message' do
+  scenario 'A user can update a message' do
+
+    go_homepage_fill_in_and_send('ahm sure ill want to update this one day')
+    expect(page).to have_content('ahm sure ill want to')
+
+    first(".indv_msg").click_button 'Update'
+    expect(current_path).to eq "/#{Message[0].id}/update"
+
+    fill_in('message', with: 'im sure ill want to update this one day')
+    click_button('Submit')
+
+    expect(current_path).to eq '/'
+    expect(page).not_to have_content('ahm sure ill want to')
+    expect(page).to have_content('im sure ill want to ')
     wipe_db
   end
 end
