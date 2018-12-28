@@ -7,12 +7,8 @@ An refreshingly simplistic take on online messaging.
   *Display messages in reverse chronological order
   *Display timestamp alongside message
   *Previews only the first 20 characters of each message on the homepage
-  *Edit posted messages (NOT YET IMPLEMENTED)
-  *Delete posted messages (NOT YET IMPLEMENTED)
-
-## Build Status
-
-Working, not finished
+  *Edit posted messages
+  *Delete posted messages
 
 ## Installation
 
