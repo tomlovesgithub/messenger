@@ -8,8 +8,8 @@ require 'pry'
 
 class Messenger < Sinatra::Base
 
-  set :sessions, true
-  
+  enable :sessions, :method_override
+
   get '/' do
     @messages = Message.all
     erb(:index)
@@ -23,6 +23,12 @@ class Messenger < Sinatra::Base
   get '/messages/:id' do
     @message = Message.get(params[:id])
     erb(:full_message)
+  end
+
+  delete '/:id' do
+    connection = PG.connect(dbname: "message_app_#{ENV["RACK_ENV"]}")
+    connection.exec("DELETE FROM messages WHERE id = #{params['id']}")
+    redirect '/'
   end
 
   run! if app_file == $PROGRAM_NAME

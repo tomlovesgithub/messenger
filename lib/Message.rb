@@ -1,4 +1,5 @@
 require 'data_mapper'
+require "pg"
 
 class Message
 
@@ -14,6 +15,16 @@ class Message
 
   def display_time
     created_at.strftime("%d/%m/%Y - %H:%M:%S.%P")
+  end
+
+
+  def self.delete(id:)
+    if ENV['RACK_ENV'] == 'test'
+      connection = PG.connect(dbname: 'message_app_test')
+    elsif ENV['RACK_ENV'] == 'development'
+      connection = PG.connect(dbname: 'message_app_development')
+    end
+    connection.exec("DELETE FROM messages WHERE id = #{id}")
   end
 
 end

@@ -1,3 +1,6 @@
+require 'database_cleaner'
+
+DatabaseCleaner.strategy = :truncation
 
 def go_homepage
   visit('/')
@@ -18,4 +21,8 @@ end
 def go_homepage_fill_in_long_message
   go_homepage_fill_in_and_send("this is my message i am posting")
   click_button('send')
+end
+
+def wipe_db
+  DatabaseCleaner.clean
 end

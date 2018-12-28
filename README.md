@@ -1,23 +1,26 @@
-# Call Me
+#🤙
 
 ## Description
-An online messaging app that allows users to:
+An refreshingly simplistic take on online messaging.
+ 🤙 allows users to:
   *Enter messages and submit
   *Display messages in reverse chronological order
   *Display timestamp alongside message
   *Previews only the first 20 characters of each message on the homepage
+  *Edit posted messages (NOT YET IMPLEMENTED)
+  *Delete posted messages (NOT YET IMPLEMENTED)
 
 ## Build Status
 
-Meets current user requirements. Further requirements expected
+Working, not finished
 
 ## Installation
 
-To install Call Me:
+To install 🤙:
 
 ```
-$ git clone https://github.com/rednblack99/message-Wed
-$ cd message-Wed
+$ git clone https://github.com/tomlovesgithub/message
+$ cd message
 $ bundle install
 $ rackup
 ```
@@ -34,6 +37,3 @@ Then head to the assigned port (default: 9292) to start sending messages!
 ## User instructions
 
 Type your message into the 'Enter you message' field and hit submit. It will appear along with the timestamp on that same page!
-
-## Credits
-  Shaneil Clarke, Adam Lodowski and Jacques Laffy

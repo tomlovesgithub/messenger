@@ -2,19 +2,28 @@
 <head><link rel="stylesheet" type="text/css" href="<%= url("/style.css")%>"></head>
 <body>
   <center>
-    <h1>🤙</h1>
-    <form action='/new_message' method='post'>
+    <div id=header><h1 id="title">🤙</h1></div>
+    <form id="textbox" action='/new_message' method='post'>
       <textarea rows="10" cols="100" type="text" name="message" >
       </textarea>
       <br>
       <input type="submit" value="send">
     </form>
-    <%@messages.reverse.each do |message| %>
-    <%= message.display_time%><br>
-    <h10>________________</h10><br>
-    <a href=<%="/messages/#{message.id}"%>>
-      <%= message.preview %></a><br>
-      <h10>________________</h10><br>
-      <%end%>
-    </center>
-  </body>
+    <div>
+      <%@messages.reverse.each do |message| %>
+      <div class="indv_msg" id="indv_msg-<%= message.id %>"<br>
+        <%=message.display_time %><br>
+        <a href=<%="/messages/#{message.id}"%>>
+          ______________________________<br>
+          <%= message.preview %><br>
+          ______________________________<br>
+        </a>
+        <form action="/<%= message.id %>" method="post">
+          <input type='hidden' name='_method' value='DELETE'/>
+          <input type="submit" value="Delete" />
+        </form>
+      </div>
+    </div>
+    <% end %>
+  </center>
+</body>
