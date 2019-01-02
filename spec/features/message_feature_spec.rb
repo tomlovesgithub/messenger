@@ -96,7 +96,7 @@ feature 'Updating a message' do
     expect(current_path).to eq "/#{Message[0].id}/update"
 
     fill_in('message', with: 'im sure ill want to update this one day')
-    click_button('Submit')
+    click_button('🤙')
 
     expect(current_path).to eq '/'
     expect(page).not_to have_content('ahm sure ill want to')

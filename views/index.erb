@@ -2,15 +2,12 @@
 <head><link rel="stylesheet" type="text/css" href="<%= url("/style.css")%>"></head>
 <body>
   <center>
-    <div id=header><h1 id="title">🤙</h1></div>
-    <form id="textbox" action='/new_message' method='post'>
-      <textarea rows="10" cols="100" type="text" name="message" >
-      </textarea>
-      <br>
-      <input type="submit" value="send">
-    </form>
+    <div id=header><h1 id="title" >🤙</h1></div>
+
+    <%= erb(:textbox, :locals => { :object => "newmessage", :content => nil, :value => nil }) %>
+
     <div>
-      <%@messages.reverse.each do |message| %>
+      <% @messages.reverse.each do |message| %>
       <div class="indv_msg" id="indv_msg-<%= message.id %>"<br>
         <%=message.display_time %><br>
         <a href=<%="/messages/#{message.id}"%>>
@@ -18,15 +15,20 @@
           <%= message.preview %><br>
           ______________________________<br>
         </a>
-        <form action="/<%= message.id %>" method="post">
+        <br>
+        <form id="buttons" action="/<%= message.id %>" method="post">
           <input type='hidden' name='_method' value='DELETE'/>
           <input type="submit" value="Delete" />
         </form>
-        <form action="/<%= message.id %>/update" method="get">
+
+        <form id="buttons" action="/<%= message.id %>/update" method="get">
           <input type="submit" value="Update" />
         </form>
+
       </div>
     </div>
+
     <% end %>
+
   </center>
 </body>

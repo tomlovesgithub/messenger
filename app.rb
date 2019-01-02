@@ -12,15 +12,17 @@ class Messenger < Sinatra::Base
 
   get '/' do
     @messages = Message.all
-    erb(:index)
+    erb :index
   end
 
-  post '/new_message' do
+  post '/newmessage' do
     Message.create(content: params[:message])
     redirect '/'
+
   end
 
   get '/messages/:id' do
+    @messages = Message.all
     @message = Message.get(params[:id])
     erb(:full_message)
   end
@@ -32,7 +34,9 @@ class Messenger < Sinatra::Base
   end
 
   get '/:id/update' do
+    @messages = Message.all
     @message_id = params[:id]
+    @message = Message.get(params[:id])
     erb(:edit)
   end
 

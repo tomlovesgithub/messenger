@@ -52,6 +52,11 @@ textarea {
   font-size: 5em;
 }
 
+#buttons {
+  display: inline-block;
+}
+
+
 #indv_msg {
   outline-style: double;
   font-family: verdana;
