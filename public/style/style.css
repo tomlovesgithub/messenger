@@ -1,0 +1,95 @@
+/* #header {
+animation-name:bckchg;
+animation-duration: 10s;
+animation-iteration-count: infinite;
+background: white;
+} */
+
+body {
+  max-width:500px;
+  margin: auto;
+  animation-name:bckchg;
+  animation-duration: 120s;
+  animation-iteration-count: infinite;
+  animation-timing-function: ease-in-out;
+  /* background: linear-gradient(to right, powderblue, powderblue, white) */
+}
+
+textarea {
+max-width: 500px;
+background-image: radial-gradient(circle, hsla(229, 100%, 82%, 1), hsla(49, 100%, 65%, 1));
+height: 240px; 
+align-self: center;
+outline-style:double;
+padding: none;
+}
+
+@keyframes rotate {
+from {transform: rotateZ(-10deg); }
+to {transform: rotateZ(20deg); }
+}
+
+@keyframes bckchg {
+0%   {background-color:hsla(229, 100%, 82%, 1);}
+25%  {background-color:hsla(49, 100%, 65%, 1);}
+50%  {background-color:hsla(229, 100%, 82%, 1);}
+75%  {background-color:hsla(49, 100%, 65%, 1);}
+100% {background-color:hsla(229, 100%, 82%, 1);}
+}
+
+div.sticky {
+position: -webkit-sticky;
+position: sticky;
+top: 0;
+padding: 5px;
+border: 2px;
+z-index: 9;
+}
+
+#title {
+animation-name: rotate;
+animation-direction: alternate;
+animation-timing-function: ease-in-out;
+animation-direction: alternate-reverse;
+animation-duration: 0.7s;
+animation-iteration-count: infinite;
+font-size: 5em;
+position: top;
+padding: inherit;
+}
+
+}
+
+.buttons {
+display: inline-block;
+}
+
+
+#indv_msg {
+outline-style: double;
+font-family: verdana;
+font-size: 1em;
+float: inherit;
+align-content: center;
+position: sticky;
+max-width: 500px;
+border: 25px;
+padding: 25px;
+margin: 25px;
+
+background-image: radial-gradient(circle, hsla(49, 100%, 65%, 1), hsla(229, 100%, 82%, 1));
+}
+
+#textbox {
+color: black;
+}
+
+#indv_msg:hover {
+background-image: radial-gradient(circle, hsla(229, 100%, 82%, 1), hsla(49, 100%, 65%, 1));
+}
+
+a:link, a:visited {
+color: black;
+text-align: center;
+display: inline-block;
+}

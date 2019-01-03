@@ -1,29 +1,29 @@
 <!DOCTYPE html>
-<head><link rel="stylesheet" type="text/css" href="<%= url("/style.css")%>"></head>
+<head>
+  <link rel="stylesheet" type="text/css" href="<%= url("/style/style.css")%>">
+  <script src=<%= url("/live/scripts.js")%>></script>
+</head>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 <body>
+  <div class="centering-hack"></div>
   <center>
-    <div id=header><h1 id="title" >🤙</h1></div>
+    <div class="sticky" ><h1 id="title" >🤙</h1></div>
 
     <%= erb(:textbox, :locals => { :object => "newmessage", :content => nil, :value => nil }) %>
 
     <div>
       <% @messages.reverse.each do |message| %>
-      <div class="indv_msg" id="indv_msg-<%= message.id %>"<br>
+      <div id="indv_msg" id="indv_msg-<%= message.id %>"<br>
         <%=message.display_time %><br>
         <a href=<%="/messages/#{message.id}"%>>
-          ______________________________<br>
+          <hr>
           <%= message.preview %><br>
-          ______________________________<br>
+          <hr>
         </a>
         <br>
-        <form id="buttons" action="/<%= message.id %>" method="post">
-          <input type='hidden' name='_method' value='DELETE'/>
-          <input type="submit" value="Delete" />
-        </form>
 
-        <form id="buttons" action="/<%= message.id %>/update" method="get">
-          <input type="submit" value="Update" />
-        </form>
+        <%= erb(:update, :locals => { :object => message.id }) %>
+        <%= erb(:delete, :locals => { :object => message.id }) %>
 
       </div>
     </div>
