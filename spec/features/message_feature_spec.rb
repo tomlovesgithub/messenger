@@ -75,7 +75,7 @@ end
 feature 'Deleting an entry' do
   scenario 'a user can delete an message' do
     go_homepage_fill_in_and_send('im sure ill want to delete this one day')
-    first(".indv_msg").click_button 'Delete'
+    first("#indv_msg").click_button 'Delete'
     expect(current_path).to eq "/"
     expect(page).not_to have_content('im sure ill want to ')
     wipe_db
@@ -92,7 +92,7 @@ feature 'Updating a message' do
     go_homepage_fill_in_and_send('ahm sure ill want to update this one day')
     expect(page).to have_content('ahm sure ill want to')
 
-    first(".indv_msg").click_button 'Update'
+    first("#indv_msg").click_button 'Update'
     expect(current_path).to eq "/#{Message[0].id}/update"
 
     fill_in('message', with: 'im sure ill want to update this one day')
@@ -100,7 +100,7 @@ feature 'Updating a message' do
 
     expect(current_path).to eq '/'
     expect(page).not_to have_content('ahm sure ill want to')
-    expect(page).to have_content('im sure ill want to ')
+    expect(page).to have_content('im sure ill want to')
     wipe_db
   end
 end

@@ -11,9 +11,9 @@
 
     <%= erb(:textbox, :locals => { :object => "newmessage", :content => nil, :value => nil }) %>
 
-    <div>
+    <div id="indv_msg">
       <% @messages.reverse.each do |message| %>
-      <div id="indv_msg" id="indv_msg-<%= message.id %>"<br>
+      <div><%=message.id%>"<br>
         <%=message.display_time %><br>
         <a href=<%="/messages/#{message.id}"%>>
           <hr>
