@@ -17,7 +17,7 @@ end
 
 feature 'text box' do
   scenario 'post message and have it appear' do
-    go_homepage_fill_in_and_send
+    go_homepage_fill_in_send
     expect(page).to have_content 'Short Message'
     wipe_db
   end
@@ -29,7 +29,7 @@ end
 
 feature 'message history' do
   scenario 'post message and have it appear' do
-    go_homepage_fill_in_and_send_2_messages
+    go_homepage_fill_in_send_2_messages
     expect(page).to have_content 'Short Message'
     expect(page).to have_content 'another message'
     wipe_db
@@ -59,8 +59,8 @@ end
 
 feature 'seeing full message at new address' do
   scenario 'click on message preview to read full message' do
-    go_homepage_fill_in_and_send_2_messages
-    go_homepage_fill_in_and_send('message to be viewed and clicked')
+    go_homepage_fill_in_send_2_messages
+    go_homepage_fill_in_send('message to be viewed and clicked')
     click_on(Message.all[3].preview)
     expect(page).to have_content 'message to be viewed and clicked'
     expect(page).to_not have_content 'Short Message'
@@ -74,7 +74,7 @@ end
 
 feature 'Deleting an entry' do
   scenario 'a user can delete an message' do
-    go_homepage_fill_in_and_send('im sure ill want to delete this one day')
+    go_homepage_fill_in_send('im sure ill want to delete this one day')
     first("#indv_msg").click_button 'Delete'
     expect(current_path).to eq "/"
     expect(page).not_to have_content('im sure ill want to ')
@@ -89,7 +89,7 @@ end
 feature 'Updating a message' do
   scenario 'A user can update a message' do
 
-    go_homepage_fill_in_and_send('ahm sure ill want to update this one day')
+    go_homepage_fill_in_send('ahm sure ill want to update this one day')
     expect(page).to have_content('ahm sure ill want to')
 
     first("#indv_msg").click_button 'Update'

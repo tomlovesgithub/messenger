@@ -1,31 +1,21 @@
 <!DOCTYPE html>
 <head>
-  <link rel="stylesheet" type="text/css" href="<%= url("/style/style.css")%>">
+  <link rel="stylesheet" type="text/css" href="<%= url("/style/style.css") %>">
   <script src=<%= url("/live/scripts.js")%>></script>
 </head>
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <body>
   <div class="centering-hack"></div>
   <center>
-    <div class="sticky" ><h1 id="title" >🤙</h1></div>
+    <div class="sticky" >
+      <h1 id="title" >🤙</h1>
+    </div>
 
     <%= erb(:textbox, :locals => { :object => "newmessage", :content => nil, :value => nil }) %>
 
-    <div id="indv_msg">
+    <div>
       <% @messages.reverse.each do |message| %>
-      <div><%=message.id%>"<br>
-        <%=message.display_time %><br>
-        <a href=<%="/messages/#{message.id}"%>>
-          <hr>
-          <%= message.preview %><br>
-          <hr>
-        </a>
-        <br>
-
-        <%= erb(:update, :locals => { :object => message.id }) %>
-        <%= erb(:delete, :locals => { :object => message.id }) %>
-
-      </div>
+      <%= erb(:individual_message, :locals => { :message => message, :content => message.preview}) %>
     </div>
 
     <% end %>

@@ -1,5 +1,6 @@
 <form action="/<%= object %>" method="post">
-  <textarea rows="10" cols="100" type="text" name="message" ><%= content == nil ? nil : content %></textarea>
-  <input type="hidden" name="_method" value="<%=value%>" /><br>
-  <input type="submit" value="🤙" />
+  <textarea class="text" rows="3" cols="50" type="text" name="tag"></textarea><br>
+  <textarea class="text" rows="10" cols="100" type="text" name="message"><%=(content == nil ? nil : content)%></textarea>
+  <input type="hidden" name="_method" value="<%=value%>" />
+  <input type="submit" value="🤙" /><br>
 </form>

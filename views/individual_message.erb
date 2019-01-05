@@ -1,0 +1,14 @@
+<div id="indv_msg">
+  <% message.id %>
+  <%= message.display_time%><br>
+  <a name="<%="#{message.tag}"%>" href=<%="/tags/#{message.tag}"%>>
+  tags:<%= message.tag %><br>
+  </a>
+  <hr>
+  <a href=<%="/messages/#{message.id}"%>>
+    <%= content %>
+    </a>
+    <hr>
+    <%= erb(:update, :locals => { :object => message.id }) %>
+    <%= erb(:delete, :locals => { :object => message.id }) %>
+  </div>

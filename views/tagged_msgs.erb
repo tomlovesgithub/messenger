@@ -6,8 +6,14 @@
       <link rel="stylesheet" type="text/css" href="<%= url("/style/style.css")%>">
     </head>
     <meta charset="utf-8">
-    <h1 id="title">🤙</h1>
+    <div class="sticky">
+      <h1 id="title">🤙</h1>
+    </div>
     <body>
-      <%= erb(:individual_message, :locals => { :message => @message, :content => @message.content}) %>
+        <div>
+          <% @messages.reverse.each do |message| %>
+          <%= erb(:individual_message, :locals => { :message => message }) %>
+        </div>
+      <% end %>
     </body>
   </center>

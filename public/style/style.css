@@ -15,11 +15,9 @@ body {
   /* background: linear-gradient(to right, powderblue, powderblue, white) */
 }
 
-textarea {
+.text {
 max-width: 500px;
 background-image: radial-gradient(circle, hsla(229, 100%, 82%, 1), hsla(49, 100%, 65%, 1));
-height: 240px; 
-align-self: center;
 outline-style:double;
 padding: none;
 }
@@ -40,8 +38,8 @@ to {transform: rotateZ(20deg); }
 div.sticky {
 position: -webkit-sticky;
 position: sticky;
-top: 0;
 padding: 5px;
+top: 0;
 border: 2px;
 z-index: 9;
 }
@@ -58,12 +56,9 @@ position: top;
 padding: inherit;
 }
 
-}
-
 .buttons {
 display: inline-block;
 }
-
 
 #indv_msg {
 outline-style: double;
