@@ -24,9 +24,9 @@ feature 'seeing messages with same tag at new address' do
     go_homepage_fill_in_tag_send(1,'message to be viewed and clicked', 'newtag')
     # binding.pry
     click_on(Message.all[5].tag)
+    wipe_db
     expect(page).to have_content 'message to be viewed and clicked'
     expect(page).to_not have_content 'Short Message'
-    wipe_db
   end
 end
 
@@ -41,7 +41,7 @@ feature 'Updating a messages tag' do
     expect(page).to have_content('ahm sure ill want to')
 
     first("#indv_msg").click_button 'Update'
-    expect(current_path).to eq "/#{Message[2].id}/update"
+    expect(current_path).to eq "/#{Message[0].id}/update"
 
     fill_in('message', with: 'im sure ill want to update this one day')
     fill_in('tag', with: 'changedthis')
