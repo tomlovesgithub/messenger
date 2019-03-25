@@ -36,10 +36,6 @@ feature 'message history' do
   end
 end
 
-feature 'message history' do
-  # order test
-end
-
 # as a user
 # so that i can only see the frist twenty characters of a message
 # i want the message to be cropped at 20 characters
@@ -61,7 +57,7 @@ feature 'seeing full message at new address' do
   scenario 'click on message preview to read full message' do
     go_homepage_fill_in_send_2_messages
     go_homepage_fill_in_send('message to be viewed and clicked')
-    click_on(Message.all[3].preview)
+    click_on(Message.all[2].preview)
     expect(page).to have_content 'message to be viewed and clicked'
     expect(page).to_not have_content 'Short Message'
     wipe_db

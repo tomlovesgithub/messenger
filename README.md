@@ -17,18 +17,15 @@ To install 🤙:
 ```
 $ git clone https://github.com/tomlovesgithub/message
 $ cd message
+$ brew install postgres
 $ bundle install
+$ createdb message_app_development
 $ rackup
 ```
 
-To load the database:
-
-*Connect to psql
-*Create the database using the psql command CREATE DATABASE message_app;
-*Connect to the database using the pqsl command \c message_app;
-*Run the query we have saved in the file 01_create_messages_table.sql
-
-Then head to the assigned port (default: 9292) to start sending messages!
+To run the test suite:
+$ createdb message_app_test
+$ rake spec
 
 ## User instructions
 

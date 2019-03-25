@@ -1,3 +1,4 @@
+require 'spec_helper'
 require 'database_cleaner'
 
 DatabaseCleaner.strategy = :truncation
@@ -12,7 +13,7 @@ def go_homepage_fill_in_send(msg = "Short Message")
   click_button('🤙')
 end
 
-def go_homepage_fill_in_tag_send(msg = "Short Message", tag = "shrttag", num = 1)
+def go_homepage_fill_in_tag_send(num = 1, msg = "Short Message", tag = "shrttag")
   num.times {
     go_homepage
     fill_in('message', with: msg)
