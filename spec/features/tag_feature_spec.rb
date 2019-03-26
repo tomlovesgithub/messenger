@@ -22,7 +22,6 @@ feature 'seeing messages with same tag at new address' do
   scenario 'click on message tag to see tagged messages' do
     go_homepage_fill_in_tag_send(5)
     go_homepage_fill_in_tag_send(1,'message to be viewed and clicked', 'newtag')
-    # binding.pry
     click_on(Message.all[5].tag)
     wipe_db
     expect(page).to have_content 'message to be viewed and clicked'

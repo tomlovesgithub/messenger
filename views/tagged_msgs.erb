@@ -12,7 +12,9 @@
     <body>
         <div>
           <% @messages.reverse.each do |message| %>
+          <% if message.tag == params[:tag] %>
           <%= erb(:individual_message, :locals => { :message => message, :content => message.content}) %>
+          <% end %>
         </div>
       <% end %>
     </body>
