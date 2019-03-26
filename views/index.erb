@@ -1,7 +1,6 @@
 <!DOCTYPE html>
 <head>
-  <link rel="stylesheet" type="text/css" href="<%= url("/style/style.css") %>">
-  <script src=<%= url("/live/scripts.js")%>></script>
+  <link rel="stylesheet" href="<%= url("/style/style.css") %>">
 </head>
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <body>
@@ -10,9 +9,7 @@
     <div class="sticky" >
       <h1 id="title" >🤙</h1>
     </div>
-
     <%= erb(:textbox, :locals => { :object => "newmessage", :content => nil, :value => nil }) %>
-
     <div>
       <% @messages.reverse.each do |message| %>
       <%= erb(:individual_message, :locals => { :message => message, :content => message.preview}) %>

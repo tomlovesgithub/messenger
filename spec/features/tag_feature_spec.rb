@@ -1,57 +1,61 @@
 require_relative './webhelpers'
 
-# as a user
-# so i can post messages with a tag
-# i want a text box for both and a send button
+describe 'tag features' do
 
-feature 'text box' do
-  scenario 'post message with tag and have tag appear' do
-    go_homepage_fill_in_tag_send
-    expect(page).to have_content 'Short Message'
-    expect(page).to have_content 'shrttag'
+  after(:example) do
     wipe_db
   end
-end
 
-# as a user
-# so that I can read the full message
-# I want to be able to click on a preview and
-# read only the full message I clicked.
+  # as a user
+  # so i can post messages with a tag
+  # i want a text box for both and a send button
 
-feature 'seeing messages with same tag at new address' do
-  scenario 'click on message tag to see tagged messages' do
-    go_homepage_fill_in_tag_send(5)
-    go_homepage_fill_in_tag_send(1,'message to be viewed and clicked', 'newtag')
-    click_on(Message.all[5].tag)
-    wipe_db
-    expect(page).to have_content 'message to be viewed and clicked'
-    expect(page).to_not have_content 'Short Message'
+  feature 'text box' do
+    scenario 'post message with tag and have tag appear' do
+      go_homepage_fill_in_tag_send
+      expect(page).to have_content 'Short Message'
+      expect(page).to have_content 'shrttag'
+    end
   end
-end
 
-# As a user
-# So I can change a message thats been posted
-# I want to update a message
+  # as a user
+  # so that I can read the full message
+  # I want to be able to click on a preview and
+  # read only the full message I clicked.
 
-feature 'Updating a messages tag' do
-  scenario 'A user can update a message' do
+  feature 'seeing messages with same tag at new address' do
+    scenario 'click on message tag to see tagged messages' do
+      go_homepage_fill_in_tag_send(5)
+      go_homepage_fill_in_tag_send(1, 'message to be viewed and clicked', 'newtag')
+      click_on(Message.all[5].tag)
+      expect(page).to have_content 'message to be viewed and clicked'
+      expect(page).to_not have_content 'Short Message'
+    end
+  end
 
-    go_homepage_fill_in_tag_send(1,'ahm sure ill want to update this one day', 'changethis')
-    expect(page).to have_content('ahm sure ill want to')
+  # As a user
+  # So I can change a message thats been posted
+  # I want to update a message
 
-    first("#indv_msg").click_button 'Update'
-    expect(current_path).to eq "/#{Message[0].id}/update"
+  feature 'Updating a messages tag' do
+    scenario 'A user can update a message' do
 
-    fill_in('message', with: 'im sure ill want to update this one day')
-    fill_in('tag', with: 'changedthis')
-    click_button('🤙')
+      go_homepage_fill_in_tag_send(1, 'ahm sure ill want to update this one day', 'changethis')
+      expect(page).to have_content('ahm sure ill want to')
 
-    expect(current_path).to eq '/'
-    expect(page).not_to have_content('ahm sure ill want to')
-    expect(page).to have_content('im sure ill want to')
-    expect(page).not_to have_content('changethis')
-    expect(page).to have_content('changedthis')
+      first("#indv_msg").click_button 'Update'
+      expect(current_path).to eq "/#{Message[0].id}/update"
 
-    wipe_db
+      fill_in('message', with: 'im sure ill want to update this one day')
+      fill_in('tag', with: 'changedthis')
+      click_button('🤙')
+
+      expect(current_path).to eq '/'
+      expect(page).not_to have_content('ahm sure ill want to')
+      expect(page).to have_content('im sure ill want to')
+      expect(page).not_to have_content('changethis')
+      expect(page).to have_content('changedthis')
+
+    end
   end
 end
